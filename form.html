@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Contact - Raul Gomez</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/images/contact.jpg">
+
+
+    <script src="JS/form.js" defer></script>
+</head>
+<body>
+
+    <div class="c-card">
+        <h2>Contact Form</h2>
+        <form id="Contact-Form" action="#" method="get">
+            <div class="form-row-3">
+                <div class="Fin">
+                    <label for="fname">First Name</label>
+                    <span class="err" id="err-fname">First name is required</span>
+                    <input type="text" id="fname" name="fname">
+                </div>
+                <div class="Fin">
+                    <label for="lname">Last Name</label>
+                    <span class="err" id="err-lname">Last name is required</span>
+                    <input type="text" id="lname" name="lname">
+                </div>
+                <div class="Fin">
+                    <label for="job-title">Job Title</label>
+                    <span class="err" id="err-job">Job title is required</span>
+                    <input type="text" id="job-title" name="job-title">
+                </div>
+            </div>
+
+            <div class="form-row-3">
+                <div class="Fin">
+                    <label for="company">Company </label>
+                    <span class="err" id="err-company">Company name is required</span>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="Fin">
+                    <label for="linkedin">LinkedIn URL</label>
+                    <span class="err" id="err-linkedin">LinkedIn URL is required</span>
+                    <input type="text" id="linkedin" name="linkedin">
+                </div>
+                <div class="Fin">
+                    <label for="email">Email Address</label>
+                    <span class="err" id="err-email">Email is required</span>
+                    <span class="err" id="err-symbol">@ symbol is required</span>
+                    <input type="text" id="email" name="email">
+                </div>
+            </div>
+
+
+            <div class="form-row-2">
+                <div class="Fin">
+                    <label for="meeting">How did we meet? </label>
+                    <span class="err" id="err-meeting">Meeting method is required</span>
+                    <select id="meeting" name="meeting">
+                        <option value="Select">Please select</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="Fin" id="other-specify-wrapper">
+                    <label for="other">Other (please specify)</label>
+                    <span class="err" id="err-other">Required if Other is selected</span>
+                    <input type="text" id="other" name="other">
+                </div>
+            </div>
+
+            <div class="Fin">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+
+            <div class="checkbox-row">
+                <input type="checkbox" id="mail" name="mail">
+                <label for="mail">Please add me to your mailing list</label>
+            </div>
+
+            <div class="radio-row">
+                <span class="radio-title">Choose an email format:</span>
+                <span class="err" id="err-format">Select email format</span>
+                <label><input type="radio" id="html" name="format" value="html"> HTML</label>
+                <label><input type="radio" id="text" name="format" value="text"> Text</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+.c-card {
+  width: 70%;
+  max-width: 950px;
+  margin: 2rem auto 5rem;
+  padding: 1rem 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.c-card h2 {
+  text-align: center;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #333333;
+  border-bottom: none;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.Fin {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.85rem;
+}
+
+.Fin label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 0.35rem;
+}
+
+.Fin input[type="text"],
+.Fin input[type="email"],
+.Fin input[type="url"],
+.Fin select {
+  width: 100%;
+  height: 2.35rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.Fin textarea {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.err {
+  display: none;
+  color: #d32f2f;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.checkbox-row label {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111111;
+  cursor: pointer;
+}
+
+.radio-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.radio-row .radio-title {
+  font-weight: 700;
+  color: #111111;
+}
+
+.radio-row label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  font-weight: 700;
+  color: #111111;
+}
+
+.radio-row .err {
+  flex-basis: 100%;
+}
+
+.btn-submit {
+  background-color: #388e3c;
+  color: #ffffff;
+  border: none;
+  padding: 0.55rem 1.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #2e7d32;
+}
+
+@media (max-width: 650px) {
+  .form-row-3,
+  .form-row-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
