@@ -1,6 +1,7 @@
 document.getElementById("Contact-Form").onsubmit = () => {
 
     let isValid = true;
+    let checked = true;
 
     clearErrors();
 
@@ -36,10 +37,16 @@ document.getElementById("Contact-Form").onsubmit = () => {
     }
 
     let email = document.getElementById("email").value.trim();
-    if (email === "")  {
+    let isMailingList = document.getElementById("mail").checked;
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (isMailingList && email === "")  {
         document.getElementById("err-email").style.display = "block";
         isValid = false;
+    } else if (email !== "" && !emailPattern.test(email)) {
+        document.getElementById("err-symbol").style.display = "block";
+        isValid = false;
     }
+
     if (!email.includes("@")) {
         document.getElementById("err-symbol").style.display = "block";
         isValid = false;
