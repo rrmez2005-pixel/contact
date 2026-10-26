@@ -1,7 +1,6 @@
 document.getElementById("Contact-Form").onsubmit = () => {
 
     let isValid = true;
-    let checked = true;
 
     clearErrors();
 
@@ -11,27 +10,16 @@ document.getElementById("Contact-Form").onsubmit = () => {
         isValid = false;
     }
 
+
     let lname = document.getElementById("lname").value.trim();
     if (lname === "") {
         document.getElementById("err-lname").style.display = "block";
         isValid = false;
     }
 
-
-    let job = document.getElementById("job-title").value.trim();
-    if (job === "") {
-        document.getElementById("err-job").style.display = "block";
-        isValid = false;
-    }
-
-    let company = document.getElementById("company").value.trim();
-    if (company === "") {
-        document.getElementById("err-company").style.display = "block";
-        isValid = false;
-    }
-
     let linkedin = document.getElementById("linkedin").value.trim();
-    if (linkedin === "") {
+    //NEEDS a linkedin url
+    if (linkedin !== "" && !linkedin.startsWith("https://linkedin.com/in/")) {
         document.getElementById("err-linkedin").style.display = "block";
         isValid = false;
     }
@@ -39,7 +27,8 @@ document.getElementById("Contact-Form").onsubmit = () => {
     let email = document.getElementById("email").value.trim();
     let isMailingList = document.getElementById("mail").checked;
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (isMailingList && email === "")  {
+
+    if (isMailingList && email === "") {
         document.getElementById("err-email").style.display = "block";
         isValid = false;
     } else if (email !== "" && !emailPattern.test(email)) {
@@ -47,13 +36,10 @@ document.getElementById("Contact-Form").onsubmit = () => {
         isValid = false;
     }
 
-    if (!email.includes("@")) {
-        document.getElementById("err-symbol").style.display = "block";
-        isValid = false;
-    }
 
     let meeting = document.getElementById("meeting").value;
     let other = document.getElementById("other").value.trim();
+
     if (meeting == "Select") {
         document.getElementById("err-meeting").style.display = "block";
         isValid = false;
@@ -63,23 +49,27 @@ document.getElementById("Contact-Form").onsubmit = () => {
         isValid = false;
     }
 
-    let methodSelected = false;
-    let methodButtons = document.getElementsByName("format");
-    for (let i = 0; i < methodButtons.length; i++) {
-        if (methodButtons[i].checked) {
-            methodSelected = true;
+    if (isMailingList) {
+        let methodSelected = false;
+        let methodButtons = document.getElementsByName("format");
+
+        for (let i = 0; i < methodButtons.length; i++) {
+            if (methodButtons[i].checked) {
+                methodSelected = true;
+                break;
+            }
+        }
+        if (!methodSelected) {
+            document.getElementById("err-format").style.display = "block";
+            isValid = false;
         }
     }
-    if (!methodSelected) {
-        document.getElementById("err-format").style.display = "block";
-        isValid = false;
-    }
+
 
     return isValid;
-};
+}; 
 
-
-function clearErrors()   {
+function clearErrors() {
     let errors = document.getElementsByClassName("err");
     for (let i = 0; i < errors.length; i++) {
         errors[i].style.display = "none";
