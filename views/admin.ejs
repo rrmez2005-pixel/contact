@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/3.1.4/css/dataTables.dataTables.min.css">
 </head>
 <body>
+    <%- include('partials/header') %>
     <h1>Orders</h1>
+
+    <% if (submissions.length === 0) { %>
+        <p>No one has submitted a form out yet</p>
+    <% } else { %>
+
     <table id="contact-table" class="display">
         <thead>
             <tr>
@@ -25,6 +31,7 @@
                 <th>Message: </th>
                 <th>Mail: </th>
                 <th>Email Format: </th>
+                <th>Timestamp: </th>
             </tr>
         </thead>
         <tbody>
@@ -32,7 +39,7 @@
                 <tr>
                     <td>First Name: <%= form.fname %></td>
                     <td>Last Name: <%= form.lname %></td>
-                    <td>Job: <%= form['job-title'] %></td>
+                    <td>Jo  b: <%= form['job-title'] %></td>
                     <td>Company: <%= form.company %></td>
                     <td>LinkedIn: <%= form.linkedin %></td>
                     <td>Email: <%= form.email %></td>
@@ -41,6 +48,7 @@
                     <td>Message: <%= form.message %></td>
                     <td>Mail: <%= form.mail %></td>
                     <td>Email Format: <%= form.format %></td>
+                    <td>Timestamp: <%= form.timestamp.toLocaleString() %></td>
                 </tr>
             <% }); %>
         </tbody>  
@@ -48,5 +56,7 @@
     <script>
         new DataTable('#contact-table');
     </script> 
+    <% } %>
+    <%- include('partials/footer') %>
 </body>
 </html>

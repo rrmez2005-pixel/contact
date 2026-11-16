@@ -1,0 +1,120 @@
+/* test again*/
+:root {
+  --primary: #113296;
+  --accent: #007bff;
+  --text: #2b2b2b;
+  --border-color: #113296;
+}
+
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.profile-photo {
+  width: 135px; 
+  height: 135px;
+  object-fit: cover;
+  border-radius: 15%;
+  border: 3px solid var(--primary);
+  flex-shrink: 0;
+}
+
+.header-text {
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  gap: 0.5rem 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.links a:focus {
+  outline: 2px solid var(--accent);
+}
+
+h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.3rem;
+}
+
+li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+@media (max-width: 650px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

@@ -4,12 +4,11 @@ document.getElementById("Contact-Form").onsubmit = () => {
 
     clearErrors();
 
-    let fname = document.getElementById("fname").value.trim();
+        let fname = document.getElementById("fname").value.trim();
     if (fname === "") {
         document.getElementById("err-fname").style.display = "block";
         isValid = false;
     }
-
 
     let lname = document.getElementById("lname").value.trim();
     if (lname === "") {
@@ -18,10 +17,11 @@ document.getElementById("Contact-Form").onsubmit = () => {
     }
 
     let linkedin = document.getElementById("linkedin").value.trim();
-    //NEEDS a linkedin url
-    if (linkedin !== "" && !linkedin.startsWith("https://linkedin.com/in/")) {
-        document.getElementById("err-linkedin").style.display = "block";
-        isValid = false;
+    if (linkedin !== "") {
+        if (!linkedin.startsWith("https://linkedin.com/in/")) {
+            document.getElementById("err-linkedin").style.display = "block";
+            isValid = false;
+        }
     }
 
     let email = document.getElementById("email").value.trim();
@@ -35,7 +35,6 @@ document.getElementById("Contact-Form").onsubmit = () => {
         document.getElementById("err-symbol").style.display = "block";
         isValid = false;
     }
-
 
     let meeting = document.getElementById("meeting").value;
     let other = document.getElementById("other").value.trim();
@@ -64,7 +63,6 @@ document.getElementById("Contact-Form").onsubmit = () => {
             isValid = false;
         }
     }
-
 
     return isValid;
 }; 

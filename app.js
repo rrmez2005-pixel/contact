@@ -13,7 +13,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.render('form');
+    res.render('home');
 });
     
 app.post('/submit', (req, res) => {
@@ -24,7 +24,13 @@ app.post('/submit', (req, res) => {
     submissions.push(submission);
     console.log(submissions);
 
-    res.render('confirm');
+    res.render('confirm', { submission: req.body });
+});
+
+// 2. Create a new route for your contact form
+app.get('/form', (req, res) => {
+    // This looks for your contact form file (e.g., contact.ejs)
+    res.render('form'); 
 });
 
 app.get('/confirm', (req, res) => {
